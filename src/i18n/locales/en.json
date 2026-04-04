@@ -172,5 +172,43 @@
     "termsOfService": "Terms of Service",
     "cookieSettings": "Cookie Settings",
     "copyright": "© 2026 FitMaker. All rights reserved."
+  },
+  "login": {
+    "title": "Welcome Back!",
+    "subtitle": "Sign in to your FitMaker account",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "••••••••",
+    "forgotPassword": "Forgot password?",
+    "rememberMe": "Remember me",
+    "button": "Sign In",
+    "loading": "Signing in...",
+    "orContinueWith": "Or continue with",
+    "noAccount": "Don't have an account?",
+    "signupLink": "Sign up",
+    "fillFields": "Please fill in all fields",
+    "invalidEmail": "Please enter a valid email",
+    "error": "Error signing in. Please try again."
+  },
+  "signup": {
+    "title": "Create Your Account",
+    "subtitle": "Start your fitness journey today",
+    "namePlaceholder": "Your full name",
+    "emailPlaceholder": "your@email.com",
+    "passwordPlaceholder": "Create a strong password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "confirmPassword": "Confirm Password",
+    "passwordHint": "Minimum 8 characters",
+    "acceptTerms": "I agree to the Terms of Service and Privacy Policy",
+    "button": "Create Account",
+    "loading": "Creating account...",
+    "hasAccount": "Already have an account?",
+    "loginLink": "Sign in",
+    "fillFields": "Please fill in all fields",
+    "invalidEmail": "Please enter a valid email",
+    "passwordTooShort": "Password must be at least 8 characters",
+    "passwordMismatch": "Passwords do not match",
+    "acceptTerms": "You must accept the Terms of Service",
+    "error": "Error creating account. Please try again.",
+    "success": "Account created successfully! Redirecting..."
   }
 }

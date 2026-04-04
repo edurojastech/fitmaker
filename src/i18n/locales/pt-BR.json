@@ -172,5 +172,43 @@
     "termsOfService": "Termos de Serviço",
     "cookieSettings": "Configurações de Cookie",
     "copyright": "© 2026 FitMaker. Todos os direitos reservados."
+  },
+  "login": {
+    "title": "Bem-vindo de volta!",
+    "subtitle": "Entre na sua conta FitMaker",
+    "emailPlaceholder": "seu@email.com",
+    "passwordPlaceholder": "••••••••",
+    "forgotPassword": "Esqueceu a senha?",
+    "rememberMe": "Lembrar-se de mim",
+    "button": "Entrar",
+    "loading": "Entrando...",
+    "orContinueWith": "Ou continue com",
+    "noAccount": "Não tem uma conta?",
+    "signupLink": "Cadastre-se",
+    "fillFields": "Por favor, preencha todos os campos",
+    "invalidEmail": "Por favor, insira um email válido",
+    "error": "Erro ao fazer login. Tente novamente."
+  },
+  "signup": {
+    "title": "Crie sua conta",
+    "subtitle": "Comece sua jornada de fitness hoje",
+    "namePlaceholder": "Seu nome completo",
+    "emailPlaceholder": "seu@email.com",
+    "passwordPlaceholder": "Crie uma senha forte",
+    "confirmPasswordPlaceholder": "Confirme sua senha",
+    "confirmPassword": "Confirmar Senha",
+    "passwordHint": "Mínimo 8 caracteres",
+    "acceptTerms": "Eu concordo com os Termos de Serviço e Política de Privacidade",
+    "button": "Criar Conta",
+    "loading": "Criando conta...",
+    "hasAccount": "Já tem uma conta?",
+    "loginLink": "Faça login",
+    "fillFields": "Por favor, preencha todos os campos",
+    "invalidEmail": "Por favor, insira um email válido",
+    "passwordTooShort": "A senha deve ter pelo menos 8 caracteres",
+    "passwordMismatch": "As senhas não coincidem",
+    "acceptTerms": "Você deve aceitar os Termos de Serviço",
+    "error": "Erro ao criar conta. Tente novamente.",
+    "success": "Conta criada com sucesso! Redirecionando..."
   }
 }

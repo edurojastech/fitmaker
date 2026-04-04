@@ -51,9 +51,9 @@ const menuItems = [
 
       <!-- Auth Buttons -->
       <div class="hidden md:flex items-center gap-4">
-        <button class="px-6 py-2 text-gray-300 hover:text-neon-red transition-colors duration-300 font-medium">
+        <router-link to="/login" class="px-6 py-2 text-gray-300 hover:text-neon-red transition-colors duration-300 font-medium">
           Login
-        </button>
+        </router-link>
         <!-- Language Toggle -->
         <button
           @click="toggleLanguage"
@@ -68,9 +68,9 @@ const menuItems = [
             🇬🇧
           </span>
         </button>
-        <button class="btn-primary">
+        <router-link to="/signup" class="btn-primary">
           Sign Up
-        </button>
+        </router-link>
       </div>
 
       <!-- Mobile Menu Button -->
@@ -108,9 +108,9 @@ const menuItems = [
           {{ item.label }}
         </a>
         <div class="flex flex-col gap-3 pt-4 border-t border-dark-tertiary">
-          <button class="px-6 py-2 text-gray-300 hover:text-neon-red transition-colors duration-300 font-medium">
+          <router-link to="/login" class="px-6 py-2 text-gray-300 hover:text-neon-red transition-colors duration-300 font-medium">
             Login
-          </button>
+          </router-link>
           <!-- Language Toggle Mobile -->
           <button
             @click="toggleLanguage"
@@ -125,9 +125,9 @@ const menuItems = [
               🇬🇧
             </span>
           </button>
-          <button class="btn-primary">
+          <router-link to="/signup" class="btn-primary">
             Sign Up
-          </button>
+          </router-link>
         </div>
       </div>
     </div>

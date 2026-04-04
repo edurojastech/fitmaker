@@ -8,37 +8,37 @@ const posts = [
     title: '10 Best Exercises for Home Workouts',
     category: 'Training',
     date: 'Mar 15, 2024',
-    image: '🏠',
+    image: 'https://images.unsplash.com/photo-1517836357463-d25ddfcbf042?w=600&h=400&fit=crop',
   },
   {
     title: 'Nutrition Tips for Muscle Building',
     category: 'Nutrition',
     date: 'Mar 12, 2024',
-    image: '🥗',
+    image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop',
   },
   {
     title: 'Recovery: The Secret to Fitness Success',
     category: 'Wellness',
     date: 'Mar 10, 2024',
-    image: '😴',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&h=400&fit=crop',
   },
   {
     title: 'High-Intensity Interval Training Guide',
     category: 'Training',
     date: 'Mar 8, 2024',
-    image: '⚡',
+    image: 'https://images.unsplash.com/photo-1552258987-868014432b8d?w=600&h=400&fit=crop',
   },
   {
     title: 'Mental Health Benefits of Exercise',
     category: 'Wellness',
     date: 'Mar 5, 2024',
-    image: '🧠',
+    image: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600&h=400&fit=crop',
   },
   {
     title: 'Beginner\'s Guide to Gym Etiquette',
     category: 'Lifestyle',
     date: 'Mar 1, 2024',
-    image: '🏋️',
+    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop',
   },
 ]
 </script>
@@ -65,8 +65,12 @@ const posts = [
           class="group overflow-hidden rounded-2xl border border-dark-tertiary hover:border-neon-red transition-all duration-300"
         >
           <!-- Image -->
-          <div class="relative h-48 bg-dark-secondary border-b border-dark-tertiary flex items-center justify-center overflow-hidden">
-            <div class="text-6xl group-hover:scale-110 transition-transform duration-300">{{ post.image }}</div>
+          <div class="relative h-48 bg-dark-secondary border-b border-dark-tertiary overflow-hidden">
+            <img
+              :src="post.image"
+              :alt="post.title"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
             <div class="absolute inset-0 bg-gradient-red opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
           </div>
 

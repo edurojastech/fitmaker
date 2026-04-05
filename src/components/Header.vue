@@ -9,11 +9,11 @@ const toggleMenu = () => {
 }
 
 const menuItems = [
-  { label: 'Início', href: '#home' },
+  { label: 'Início', href: '/' },
   { label: 'Programas', href: '#programs' },
   { label: 'Coaching', href: '#coaching' },
   { label: 'Planos', href: '#plans' },
-  { label: 'Sobre', href: '#about' },
+  { label: 'Blog', href: '#blog' },
 ]
 </script>
 
@@ -30,14 +30,14 @@ const menuItems = [
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-8">
-        <router-link
+        <a
           v-for="item in menuItems"
           :key="item.href"
-          :to="item.href"
+          :href="item.href"
           class="text-gray-300 hover:text-neon-red transition-colors duration-300 font-medium"
         >
           {{ item.label }}
-        </router-link>
+      </a>
       </div>
 
       <!-- Auth Buttons -->

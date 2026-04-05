@@ -14,7 +14,7 @@ const posts = [
     title: 'Nutrition Tips for Muscle Building',
     category: 'Nutrition',
     date: 'Mar 12, 2024',
-    image: 'https://images.unsplash.com/photo-1585521537158-3727501d615f?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1761582861462-ee72cf21336e',
   },
   {
     title: 'Recovery: The Secret to Fitness Success',
@@ -44,7 +44,7 @@ const posts = [
 </script>
 
 <template>
-  <section class="bg-dark-primary py-20 relative overflow-hidden">
+  <section class="bg-dark-primary py-20 relative overflow-hidden" id="blog">
     <div class="absolute inset-0 bg-gradient-glow opacity-20 pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

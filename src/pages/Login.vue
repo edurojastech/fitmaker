@@ -62,9 +62,11 @@ const togglePasswordVisibility = () => {
   <div class="min-h-screen bg-dark-primary text-white">
     <Header />
 
-    <div class="min-h-screen pt-28 pb-20 flex items-center justify-center relative overflow-hidden">
-      <!-- Background Gradient -->
-      <div class="absolute inset-0 bg-gradient-glow opacity-30 pointer-events-none"></div>
+    <div class="min-h-screen pt-28 pb-20 flex items-center justify-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1517836357463-d25ddfcnd906?w=1200&h=800&fit=crop&q=80'); background-size: cover; background-position: center;">
+      <!-- Background Overlay -->
+      <div class="absolute inset-0 bg-black/60"></div>
+      <!-- Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-glow opacity-20 pointer-events-none"></div>
 
       <div class="max-w-md w-full px-4 relative z-10">
         <!-- Card -->

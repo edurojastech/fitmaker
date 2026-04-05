@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useI18n } from 'vue-i18n'
+import { translations } from '../constants'
 import Header from '../components/Header.vue'
 
+const { signup, common } = translations
 const router = useRouter()
-const { t } = useI18n()
 
 const formData = ref({
   name: '',
@@ -27,30 +27,30 @@ const handleSignup = async () => {
 
   // Validação básica
   if (!formData.value.name || !formData.value.email || !formData.value.password || !formData.value.confirmPassword) {
-    errorMessage.value = t('signup.fillFields')
+    errorMessage.value = signup.fillFields
     return
   }
 
   // Validação de email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!emailRegex.test(formData.value.email)) {
-    errorMessage.value = t('signup.invalidEmail')
+    errorMessage.value = signup.invalidEmail
     return
   }
 
   // Validação de senha
   if (formData.value.password.length < 8) {
-    errorMessage.value = t('signup.passwordTooShort')
+    errorMessage.value = signup.passwordTooShort
     return
   }
 
   if (formData.value.password !== formData.value.confirmPassword) {
-    errorMessage.value = t('signup.passwordMismatch')
+    errorMessage.value = signup.passwordMismatch
     return
   }
 
   if (!acceptTerms.value) {
-    errorMessage.value = t('signup.acceptTerms')
+    errorMessage.value = signup.acceptTerms
     return
   }
 
@@ -66,14 +66,14 @@ const handleSignup = async () => {
       email: formData.value.email,
     }))
 
-    successMessage.value = t('signup.success')
+    successMessage.value = signup.success
 
     // Redirecionar para home
     setTimeout(() => {
       router.push('/')
     }, 1500)
   } catch (error) {
-    errorMessage.value = t('signup.error')
+    errorMessage.value = signup.error
   } finally {
     isLoading.value = false
   }
@@ -109,8 +109,8 @@ const toggleConfirmPasswordVisibility = () => {
 
           <!-- Title -->
           <div class="text-center mb-8">
-            <h1 class="heading-sm mb-2">{{ t('signup.title') }}</h1>
-            <p class="text-gray-400">{{ t('signup.subtitle') }}</p>
+            <h1 class="heading-sm mb-2">{{ signup.title }}</h1>
+            <p class="text-gray-400">{{ signup.subtitle }}</p>
           </div>
 
           <!-- Error Message -->
@@ -127,35 +127,35 @@ const toggleConfirmPasswordVisibility = () => {
           <form @submit.prevent="handleSignup" class="space-y-4">
             <!-- Name -->
             <div>
-              <label class="block text-sm font-bold mb-2">{{ t('common.name') }}</label>
+              <label class="block text-sm font-bold mb-2">{{ common.name }}</label>
               <input
                 v-model="formData.name"
                 type="text"
                 class="w-full px-4 py-3 bg-dark-primary border border-dark-tertiary rounded-lg focus:outline-none focus:border-neon-red transition-colors"
-                :placeholder="t('signup.namePlaceholder')"
+                :placeholder="signup.namePlaceholder"
               />
             </div>
 
             <!-- Email -->
             <div>
-              <label class="block text-sm font-bold mb-2">{{ t('common.email') }}</label>
+              <label class="block text-sm font-bold mb-2">{{ common.email }}</label>
               <input
                 v-model="formData.email"
                 type="email"
                 class="w-full px-4 py-3 bg-dark-primary border border-dark-tertiary rounded-lg focus:outline-none focus:border-neon-red transition-colors"
-                :placeholder="t('signup.emailPlaceholder')"
+                :placeholder="signup.emailPlaceholder"
               />
             </div>
 
             <!-- Password -->
             <div>
-              <label class="block text-sm font-bold mb-2">{{ t('common.password') }}</label>
+              <label class="block text-sm font-bold mb-2">{{ common.password }}</label>
               <div class="relative">
                 <input
                   v-model="formData.password"
                   :type="showPassword ? 'text' : 'password'"
                   class="w-full px-4 py-3 bg-dark-primary border border-dark-tertiary rounded-lg focus:outline-none focus:border-neon-red transition-colors"
-                  :placeholder="t('signup.passwordPlaceholder')"
+                  :placeholder="signup.passwordPlaceholder"
                 />
                 <button
                   type="button"
@@ -165,18 +165,18 @@ const toggleConfirmPasswordVisibility = () => {
                   {{ showPassword ? '👁️' : '👁️‍🗨️' }}
                 </button>
               </div>
-              <p class="text-xs text-gray-500 mt-1">{{ t('signup.passwordHint') }}</p>
+              <p class="text-xs text-gray-500 mt-1">{{ signup.passwordHint }}</p>
             </div>
 
             <!-- Confirm Password -->
             <div>
-              <label class="block text-sm font-bold mb-2">{{ t('signup.confirmPassword') }}</label>
+              <label class="block text-sm font-bold mb-2">{{ signup.confirmPassword }}</label>
               <div class="relative">
                 <input
                   v-model="formData.confirmPassword"
                   :type="showConfirmPassword ? 'text' : 'password'"
                   class="w-full px-4 py-3 bg-dark-primary border border-dark-tertiary rounded-lg focus:outline-none focus:border-neon-red transition-colors"
-                  :placeholder="t('signup.confirmPasswordPlaceholder')"
+                  :placeholder="signup.confirmPasswordPlaceholder"
                 />
                 <button
                   type="button"
@@ -197,7 +197,7 @@ const toggleConfirmPasswordVisibility = () => {
                 class="w-4 h-4 accent-neon-red cursor-pointer mt-1"
               />
               <label for="acceptTerms" class="text-xs text-gray-400 cursor-pointer">
-                {{ t('signup.acceptTerms') }}
+                {{ signup.acceptTerms }}
               </label>
             </div>
 
@@ -207,15 +207,15 @@ const toggleConfirmPasswordVisibility = () => {
               :disabled="isLoading"
               class="btn-primary w-full mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {{ isLoading ? t('signup.loading') : t('signup.button') }}
+              {{ isLoading ? signup.loading : signup.button }}
             </button>
           </form>
 
           <!-- Login Link -->
           <p class="text-center mt-8 text-gray-400">
-            {{ t('signup.hasAccount') }}
+            {{ signup.hasAccount }}
             <router-link to="/login" class="text-neon-red hover:text-neon-orange font-bold transition-colors">
-              {{ t('signup.loginLink') }}
+              {{ signup.loginLink }}
             </router-link>
           </p>
         </div>

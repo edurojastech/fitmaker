@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { useI18n } from 'vue-i18n'
+import { translations } from '../constants'
 import Header from '../components/Header.vue'
 
+const { login, common } = translations
 const router = useRouter()
-const { t } = useI18n()
 
 const formData = ref({
   email: '',
@@ -21,14 +21,14 @@ const handleLogin = async () => {
 
   // Validação básica
   if (!formData.value.email || !formData.value.password) {
-    errorMessage.value = t('login.fillFields')
+    errorMessage.value = login.fillFields
     return
   }
 
   // Validação de email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!emailRegex.test(formData.value.email)) {
-    errorMessage.value = t('login.invalidEmail')
+    errorMessage.value = login.invalidEmail
     return
   }
 
@@ -47,7 +47,7 @@ const handleLogin = async () => {
     // Redirecionar para home
     router.push('/')
   } catch (error) {
-    errorMessage.value = t('login.error')
+    errorMessage.value = login.error
   } finally {
     isLoading.value = false
   }
@@ -79,8 +79,8 @@ const togglePasswordVisibility = () => {
 
           <!-- Title -->
           <div class="text-center mb-8">
-            <h1 class="heading-sm mb-2">{{ t('login.title') }}</h1>
-            <p class="text-gray-400">{{ t('login.subtitle') }}</p>
+            <h1 class="heading-sm mb-2">{{ login.title }}</h1>
+            <p class="text-gray-400">{{ login.subtitle }}</p>
           </div>
 
           <!-- Error Message -->
@@ -92,21 +92,21 @@ const togglePasswordVisibility = () => {
           <form @submit.prevent="handleLogin" class="space-y-4">
             <!-- Email -->
             <div>
-              <label class="block text-sm font-bold mb-2">{{ t('common.email') }}</label>
+              <label class="block text-sm font-bold mb-2">{{ common.email }}</label>
               <input
                 v-model="formData.email"
                 type="email"
                 class="w-full px-4 py-3 bg-dark-primary border border-dark-tertiary rounded-lg focus:outline-none focus:border-neon-red transition-colors"
-                :placeholder="t('login.emailPlaceholder')"
+                :placeholder="login.emailPlaceholder"
               />
             </div>
 
             <!-- Password -->
             <div>
               <div class="flex items-center justify-between mb-2">
-                <label class="text-sm font-bold">{{ t('common.password') }}</label>
+                <label class="text-sm font-bold">{{ common.password }}</label>
                 <a href="#" class="text-neon-red hover:text-neon-orange text-xs font-bold transition-colors">
-                  {{ t('login.forgotPassword') }}
+                  {{ login.forgotPassword }}
                 </a>
               </div>
               <div class="relative">
@@ -114,7 +114,7 @@ const togglePasswordVisibility = () => {
                   v-model="formData.password"
                   :type="showPassword ? 'text' : 'password'"
                   class="w-full px-4 py-3 bg-dark-primary border border-dark-tertiary rounded-lg focus:outline-none focus:border-neon-red transition-colors"
-                  :placeholder="t('login.passwordPlaceholder')"
+                  :placeholder="login.passwordPlaceholder"
                 />
                 <button
                   type="button"
@@ -134,7 +134,7 @@ const togglePasswordVisibility = () => {
                 class="w-4 h-4 accent-neon-red cursor-pointer"
               />
               <label for="rememberMe" class="text-sm text-gray-400 cursor-pointer">
-                {{ t('login.rememberMe') }}
+                {{ login.rememberMe }}
               </label>
             </div>
 
@@ -144,7 +144,7 @@ const togglePasswordVisibility = () => {
               :disabled="isLoading"
               class="btn-primary w-full mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {{ isLoading ? t('login.loading') : t('login.button') }}
+              {{ isLoading ? login.loading : login.button }}
             </button>
           </form>
 
@@ -154,7 +154,7 @@ const togglePasswordVisibility = () => {
               <div class="w-full border-t border-dark-tertiary"></div>
             </div>
             <div class="relative flex justify-center text-sm">
-              <span class="px-2 bg-dark-secondary text-gray-400">{{ t('login.orContinueWith') }}</span>
+              <span class="px-2 bg-dark-secondary text-gray-400">{{ login.orContinueWith }}</span>
             </div>
           </div>
 
@@ -170,9 +170,9 @@ const togglePasswordVisibility = () => {
 
           <!-- Signup Link -->
           <p class="text-center mt-8 text-gray-400">
-            {{ t('login.noAccount') }}
+            {{ login.noAccount }}
             <router-link to="/signup" class="text-neon-red hover:text-neon-orange font-bold transition-colors">
-              {{ t('login.signupLink') }}
+              {{ login.signupLink }}
             </router-link>
           </p>
         </div>

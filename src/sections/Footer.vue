@@ -1,27 +1,26 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { translations } from '../constants'
 
-const { t } = useI18n()
+const { footer, common } = translations
 
-const footerSections = computed(() => [
+const footerSections = [
   {
-    title: t('footer.company'),
+    title: footer.company,
     links: ['About Us', 'Careers', 'Press', 'Blog'],
   },
   {
-    title: t('footer.programs'),
+    title: footer.programs,
     links: ['Weight Loss', 'Muscle Gain', 'Home Fitness', 'Gym Plans'],
   },
   {
-    title: t('footer.resources'),
+    title: footer.resources,
     links: ['Guides', 'Tutorials', 'Community', 'Support'],
   },
   {
-    title: t('footer.legal'),
-    links: [t('footer.privacyPolicy'), t('footer.termsOfService'), t('footer.cookieSettings'), 'Refund Policy'],
+    title: footer.legal,
+    links: [footer.privacyPolicy, footer.termsOfService, footer.cookieSettings, 'Refund Policy'],
   },
-])
+]
 
 const socialLinks = [
   { name: 'Facebook', icon: 'f', url: '#' },
@@ -45,7 +44,7 @@ const socialLinks = [
             <span class="text-xl font-montserrat font-bold">FitMaker</span>
           </div>
           <p class="text-gray-400 text-sm mb-6">
-            {{ t('common.slogan') }}
+            {{ common.slogan }}
           </p>
           <div class="flex gap-4">
             <a
@@ -86,17 +85,17 @@ const socialLinks = [
       <!-- Bottom Section -->
       <div class="flex flex-col md:flex-row items-center justify-between">
         <p class="text-gray-400 text-sm">
-          {{ t('footer.copyright') }}
+          {{ footer.copyright }}
         </p>
         <div class="flex gap-6 mt-4 md:mt-0">
           <a href="#" class="text-gray-400 hover:text-neon-red transition-colors text-sm">
-            {{ t('footer.privacyPolicy') }}
+            {{ footer.privacyPolicy }}
           </a>
           <a href="#" class="text-gray-400 hover:text-neon-red transition-colors text-sm">
-            {{ t('footer.termsOfService') }}
+            {{ footer.termsOfService }}
           </a>
           <a href="#" class="text-gray-400 hover:text-neon-red transition-colors text-sm">
-            {{ t('footer.cookieSettings') }}
+            {{ footer.cookieSettings }}
           </a>
         </div>
       </div>

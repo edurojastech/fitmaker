@@ -1,27 +1,27 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
+import { translations } from '../constants'
 
-const { t } = useI18n()
+const { services: servicesText, common } = translations
 
 const services = [
   {
-    title: t('services.weightLoss'),
-    description: t('services.weightLossDesc'),
+    title: servicesText.weightLoss,
+    description: servicesText.weightLossDesc,
     icon: '⚡',
   },
   {
-    title: t('services.muscleBuilding'),
-    description: t('services.muscleBuildingDesc'),
+    title: servicesText.muscleBuilding,
+    description: servicesText.muscleBuildingDesc,
     icon: '💪',
   },
   {
-    title: t('services.homeTraining'),
-    description: t('services.homeTrainingDesc'),
+    title: servicesText.homeTraining,
+    description: servicesText.homeTrainingDesc,
     icon: '🏠',
   },
   {
-    title: t('services.gymPlan'),
-    description: t('services.gymPlanDesc'),
+    title: servicesText.gymPlan,
+    description: servicesText.gymPlanDesc,
     icon: '🏋️',
   },
 ]
@@ -34,10 +34,10 @@ const services = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Title -->
       <div class="text-center mb-16">
-        <p class="text-neon-red font-montserrat font-bold text-lg uppercase">{{ t('services.title') }}</p>
-        <h2 class="heading-md mt-4">{{ t('services.subtitle') }}</h2>
+        <p class="text-neon-red font-montserrat font-bold text-lg uppercase">{{ servicesText.title }}</p>
+        <h2 class="heading-md mt-4">{{ servicesText.subtitle }}</h2>
         <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-          {{ t('services.description') }}
+          {{ servicesText.description }}
         </p>
       </div>
 
@@ -60,7 +60,7 @@ const services = [
             </div>
 
             <button class="mt-6 text-neon-red hover:text-neon-orange font-montserrat font-bold inline-flex items-center gap-2 transition-colors">
-              {{ t('common.learnMore') }} →
+              {{ common.learnMore }} →
             </button>
           </div>
 

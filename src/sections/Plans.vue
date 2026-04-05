@@ -1,48 +1,48 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { translations } from '../constants'
 
-const { t } = useI18n()
+const { plans: plansText, common } = translations
 const isAnnual = ref(false)
 
 const plans = computed(() => [
   {
-    name: t('plans.beginner'),
+    name: plansText.beginner,
     monthlyPrice: 49,
     yearlyPrice: 490,
     features: [
-      t('plans.feature1'),
-      t('plans.feature2'),
-      t('plans.feature3'),
-      t('plans.feature4'),
-      t('plans.feature5'),
+      plansText.feature1,
+      plansText.feature2,
+      plansText.feature3,
+      plansText.feature4,
+      plansText.feature5,
     ],
     highlight: false,
   },
   {
-    name: t('plans.pro'),
+    name: plansText.pro,
     monthlyPrice: 99,
     yearlyPrice: 990,
     features: [
-      `${t('plans.beginner')} +`,
-      t('plans.feature6'),
-      t('plans.feature7'),
-      t('plans.feature8'),
-      t('plans.feature9'),
+      `${plansText.beginner} +`,
+      plansText.feature6,
+      plansText.feature7,
+      plansText.feature8,
+      plansText.feature9,
     ],
     highlight: false,
   },
   {
-    name: t('plans.custom'),
+    name: plansText.custom,
     monthlyPrice: 149,
     yearlyPrice: 1490,
     features: [
-      `${t('plans.pro')} +`,
-      t('plans.feature10'),
-      t('plans.feature11'),
-      t('plans.feature12'),
-      t('plans.feature13'),
-      t('plans.feature14'),
+      `${plansText.pro} +`,
+      plansText.feature10,
+      plansText.feature11,
+      plansText.feature12,
+      plansText.feature13,
+      plansText.feature14,
     ],
     highlight: true,
   },
@@ -56,15 +56,15 @@ const plans = computed(() => [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Title -->
       <div class="text-center mb-12">
-        <p class="text-neon-red font-montserrat font-bold text-lg uppercase">{{ t('plans.title') }}</p>
-        <h2 class="heading-md mt-4">{{ t('plans.subtitle') }}</h2>
+        <p class="text-neon-red font-montserrat font-bold text-lg uppercase">{{ plansText.title }}</p>
+        <h2 class="heading-md mt-4">{{ plansText.subtitle }}</h2>
         <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-          {{ t('plans.description') }}
+          {{ plansText.description }}
         </p>
 
         <!-- Toggle Monthly/Annual -->
         <div class="flex items-center justify-center gap-4 mt-8">
-          <span :class="!isAnnual ? 'text-white font-bold' : 'text-gray-400'">{{ t('plans.monthly') }}</span>
+          <span :class="!isAnnual ? 'text-white font-bold' : 'text-gray-400'">{{ plansText.monthly }}</span>
           <button
             @click="isAnnual = !isAnnual"
             class="relative w-14 h-7 bg-dark-secondary rounded-full border border-dark-tertiary transition-all duration-300"
@@ -76,7 +76,7 @@ const plans = computed(() => [
               ]"
             ></div>
           </button>
-          <span :class="isAnnual ? 'text-white font-bold' : 'text-gray-400'">{{ t('plans.annual') }} <span class="text-neon-red">{{ t('plans.discount') }}</span></span>
+          <span :class="isAnnual ? 'text-white font-bold' : 'text-gray-400'">{{ plansText.annual }} <span class="text-neon-red">{{ plansText.discount }}</span></span>
         </div>
       </div>
 
@@ -93,7 +93,7 @@ const plans = computed(() => [
           <!-- Highlight Badge -->
           <div v-if="plan.highlight" class="absolute -top-4 left-1/2 transform -translate-x-1/2">
             <span class="bg-gradient-red text-white px-4 py-1 rounded-full text-sm font-montserrat font-bold uppercase">
-              {{ t('plans.mostPopular') }}
+              {{ plansText.mostPopular }}
             </span>
           </div>
 
@@ -105,7 +105,7 @@ const plans = computed(() => [
             <span class="text-5xl font-montserrat font-bold text-neon-red">
               ${{ isAnnual ? plan.yearlyPrice : plan.monthlyPrice }}
             </span>
-            <span class="text-gray-400 ml-2">/{{ isAnnual ? t('plans.annual').toLowerCase() : t('plans.monthly').toLowerCase() }}</span>
+            <span class="text-gray-400 ml-2">/{{ isAnnual ? plansText.annual.toLowerCase() : plansText.monthly.toLowerCase() }}</span>
           </div>
 
           <!-- CTA Button -->
@@ -117,7 +117,7 @@ const plans = computed(() => [
                 : 'border border-neon-red text-neon-red hover:bg-neon-red hover:text-white',
             ]"
           >
-            {{ t('common.chooseThisPlan') }}
+            {{ common.chooseThisPlan }}
           </button>
 
           <!-- Features List -->

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-  import { useI18n } from 'vue-i18n'
+  import { translations } from '../constants'
   import atletaImg from '../assets/atleta.png'
 
-  const { t } = useI18n()
+  const { hero } = translations
 </script>
 
 <template>
@@ -15,23 +15,23 @@
         <!-- Left Content -->
         <div class="space-y-8 animate-fade-in">
           <div>
-            <p class="text-neon-red font-montserrat font-bold text-lg mb-2 uppercase">{{ t('hero.tag') }}</p>
+            <p class="text-neon-red font-montserrat font-bold text-lg mb-2 uppercase">{{ hero.tag }}</p>
             <h1 class="heading-lg leading-tight">
-              {{ t('hero.headline') }} <span class="bg-gradient-red bg-clip-text text-transparent">{{ t('hero.highlight') }}</span> {{ t('hero.subheadline') }}
+              {{ hero.headline }} <span class="bg-gradient-red bg-clip-text text-transparent">{{ hero.highlight }}</span> {{ hero.subheadline }}
             </h1>
           </div>
 
           <p class="text-gray-400 text-lg leading-relaxed max-w-xl">
-            {{ t('hero.description') }}
+            {{ hero.description }}
           </p>
 
           <!-- CTA Buttons -->
           <div class="flex flex-col sm:flex-row gap-4">
             <button class="btn-primary">
-              {{ t('hero.cta1') }}
+              {{ hero.cta1 }}
             </button>
             <button class="btn-secondary">
-              {{ t('hero.cta2') }}
+              {{ hero.cta2 }}
             </button>
           </div>
         </div>
@@ -53,25 +53,25 @@
             <!-- Stats Badge - Top Right -->
             <div class="absolute top-8 right-4 sm:right-8 bg-dark-secondary/95 backdrop-blur-lg px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border border-neon-orange shadow-glow animate-float">
               <p class="text-neon-orange font-montserrat font-bold text-xs sm:text-sm">+ 1300</p>
-              <p class="text-gray-300 text-xs">{{ t('hero.reviews') }}</p>
+              <p class="text-gray-300 text-xs">{{ hero.reviews }}</p>
             </div>
 
             <!-- Stats Badge - Left -->
             <div class="absolute left-4 sm:left-8 top-1/3 bg-dark-secondary/95 backdrop-blur-lg px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border border-neon-red shadow-glow animate-float" style="animation-delay: 0.3s;">
               <p class="text-neon-red font-montserrat font-bold text-xs sm:text-sm">+ 80</p>
-              <p class="text-gray-300 text-xs">{{ t('hero.coaches') }}</p>
+              <p class="text-gray-300 text-xs">{{ hero.coaches }}</p>
             </div>
 
             <!-- Stats Badge - Bottom Right -->
             <div class="absolute bottom-8 right-4 sm:right-8 bg-dark-secondary/95 backdrop-blur-lg px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border border-neon-orange shadow-glow animate-float" style="animation-delay: 0.6s;">
               <p class="text-neon-orange font-montserrat font-bold text-xs sm:text-sm">+ 1500</p>
-              <p class="text-gray-300 text-xs">{{ t('hero.trainers') }}</p>
+              <p class="text-gray-300 text-xs">{{ hero.trainers }}</p>
             </div>
 
             <!-- Stats Badge - Bottom Left -->
             <div class="absolute -bottom-2 left-1/4 bg-dark-secondary/95 backdrop-blur-lg px-4 sm:px-5 py-2.5 sm:py-3 rounded-full border border-neon-orange shadow-glow animate-float" style="animation-delay: 0.9s;">
               <p class="text-neon-orange font-montserrat font-bold text-xs sm:text-sm">+ 1000</p>
-              <p class="text-gray-300 text-xs">{{ t('hero.videos') }}</p>
+              <p class="text-gray-300 text-xs">{{ hero.videos }}</p>
             </div>
           </div>
         </div>

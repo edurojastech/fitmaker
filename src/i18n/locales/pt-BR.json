@@ -144,7 +144,7 @@
     "createAccount": "Criar Conta",
     "orContinueWith": "Ou continue com",
     "google": "Google",
-    "agreeTerms": "Ao se cadastrar, você concorda com nossos <span>Termos</span> e <span>Política de Privacidade</span>"
+    "agreeTerms": "Ao se cadastrar, você concorda com nossos Termos e Política de Privacidade"
   },
   "faq": {
     "title": "FAQ",
@@ -207,7 +207,7 @@
     "invalidEmail": "Por favor, insira um email válido",
     "passwordTooShort": "A senha deve ter pelo menos 8 caracteres",
     "passwordMismatch": "As senhas não coincidem",
-    "acceptTerms": "Você deve aceitar os Termos de Serviço",
+    "acceptTerms2": "Você deve aceitar os Termos de Serviço",
     "error": "Erro ao criar conta. Tente novamente.",
     "success": "Conta criada com sucesso! Redirecionando..."
   }

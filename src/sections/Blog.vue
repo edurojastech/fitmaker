@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
+import { translations } from '../constants'
 
-const { t } = useI18n()
+const { blog } = translations
 
 const posts = [
   {
@@ -50,10 +50,10 @@ const posts = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Title -->
       <div class="text-center mb-16">
-        <p class="text-neon-red font-montserrat font-bold text-lg uppercase">{{ t('blog.title') }}</p>
-        <h2 class="heading-md mt-4">{{ t('blog.subtitle') }}</h2>
+        <p class="text-neon-red font-montserrat font-bold text-lg uppercase">{{ blog.title }}</p>
+        <h2 class="heading-md mt-4">{{ blog.subtitle }}</h2>
         <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-          {{ t('blog.description') }}
+          {{ blog.description }}
         </p>
       </div>
 
@@ -84,7 +84,7 @@ const posts = [
             <h3 class="font-montserrat font-bold text-lg line-clamp-2 mb-4">{{ post.title }}</h3>
 
             <button class="text-neon-red hover:text-neon-orange transition-colors font-bold text-sm">
-              {{ t('blog.readMore') }} →
+              {{ blog.readMore }} →
             </button>
           </div>
         </article>

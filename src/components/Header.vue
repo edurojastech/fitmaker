@@ -1,29 +1,19 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { setLocale } from '../i18n'
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const isMenuOpen = ref(false)
-const { locale } = useI18n()
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
 }
 
-const toggleLanguage = () => {
-  const newLocale = locale.value === 'pt-BR' ? 'en' : 'pt-BR'
-  setLocale(newLocale)
-}
-
-const currentLocale = computed(() => locale.value)
-
 const menuItems = [
-  { label: 'Home', href: '#home' },
-  { label: 'Programs', href: '#programs' },
+  { label: 'Início', href: '#home' },
+  { label: 'Programas', href: '#programs' },
   { label: 'Coaching', href: '#coaching' },
-  { label: 'Plans', href: '#plans' },
-  { label: 'About', href: '#about' },
+  { label: 'Planos', href: '#plans' },
+  { label: 'Sobre', href: '#about' },
 ]
 </script>
 
@@ -55,22 +45,8 @@ const menuItems = [
         <router-link to="/login" class="px-6 py-2 text-gray-300 hover:text-neon-red transition-colors duration-300 font-medium">
           Login
         </router-link>
-        <!-- Language Toggle -->
-        <button
-          @click="toggleLanguage"
-          class="px-4 py-2 rounded-lg bg-dark-secondary hover:bg-dark-tertiary border border-dark-tertiary hover:border-neon-red text-gray-300 hover:text-neon-red transition-all duration-300 font-medium text-sm flex items-center gap-2"
-          :title="currentLocale === 'pt-BR' ? 'Switch to English' : 'Trocar para Português'"
-        >
-          <span :class="{ 'opacity-100': currentLocale === 'pt-BR', 'opacity-50': currentLocale !== 'pt-BR' }">
-            🇧🇷
-          </span>
-          <span class="text-gray-500">/</span>
-          <span :class="{ 'opacity-100': currentLocale === 'en', 'opacity-50': currentLocale !== 'en' }">
-            🇬🇧
-          </span>
-        </button>
         <router-link to="/signup" class="btn-primary">
-          Sign Up
+          Cadastro
         </router-link>
       </div>
 
@@ -112,22 +88,8 @@ const menuItems = [
           <router-link to="/login" class="px-6 py-2 text-gray-300 hover:text-neon-red transition-colors duration-300 font-medium">
             Login
           </router-link>
-          <!-- Language Toggle Mobile -->
-          <button
-            @click="toggleLanguage"
-            class="px-4 py-2 rounded-lg bg-dark-tertiary hover:bg-opacity-80 border border-dark-tertiary hover:border-neon-red text-gray-300 hover:text-neon-red transition-all duration-300 font-medium text-sm flex items-center justify-center gap-2"
-            :title="currentLocale === 'pt-BR' ? 'Switch to English' : 'Trocar para Português'"
-          >
-            <span :class="{ 'opacity-100': currentLocale === 'pt-BR', 'opacity-50': currentLocale !== 'pt-BR' }">
-              🇧🇷
-            </span>
-            <span class="text-gray-500">/</span>
-            <span :class="{ 'opacity-100': currentLocale === 'en', 'opacity-50': currentLocale !== 'en' }">
-              🇬🇧
-            </span>
-          </button>
           <router-link to="/signup" class="btn-primary">
-            Sign Up
+            Cadastro
           </router-link>
         </div>
       </div>

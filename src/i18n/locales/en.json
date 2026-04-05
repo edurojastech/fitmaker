@@ -144,7 +144,7 @@
     "createAccount": "Create Account",
     "orContinueWith": "Or continue with",
     "google": "Google",
-    "agreeTerms": "By signing up, you agree to our <span>Terms</span> and <span>Privacy Policy</span>"
+    "agreeTerms": "By signing up, you agree to our Terms and Privacy Policy"
   },
   "faq": {
     "title": "FAQ",
@@ -207,7 +207,7 @@
     "invalidEmail": "Please enter a valid email",
     "passwordTooShort": "Password must be at least 8 characters",
     "passwordMismatch": "Passwords do not match",
-    "acceptTerms": "You must accept the Terms of Service",
+    "acceptTerms2": "You must accept the Terms of Service",
     "error": "Error creating account. Please try again.",
     "success": "Account created successfully! Redirecting..."
   }

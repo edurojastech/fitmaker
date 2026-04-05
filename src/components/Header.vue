@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { setLocale } from '../i18n'
+import { RouterLink } from 'vue-router'
 
 const isMenuOpen = ref(false)
 const { locale } = useI18n()
@@ -30,23 +31,23 @@ const menuItems = [
   <header class="fixed top-0 w-full bg-dark-primary/95 backdrop-blur-md border-b border-dark-tertiary z-50">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
       <!-- Logo -->
-      <div class="flex items-center gap-2">
+      <router-link class="flex items-center gap-2" to="/">
         <div class="w-10 h-10 bg-gradient-red rounded-lg flex items-center justify-center">
           <span class="font-montserrat font-bold text-white">FM</span>
         </div>
         <span class="text-xl font-montserrat font-bold text-white hidden sm:inline">FitMaker</span>
-      </div>
+      </router-link>
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center gap-8">
-        <a
+        <router-link
           v-for="item in menuItems"
           :key="item.href"
-          :href="item.href"
+          :to="item.href"
           class="text-gray-300 hover:text-neon-red transition-colors duration-300 font-medium"
         >
           {{ item.label }}
-        </a>
+        </router-link>
       </div>
 
       <!-- Auth Buttons -->

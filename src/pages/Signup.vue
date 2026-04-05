@@ -92,13 +92,13 @@ const toggleConfirmPasswordVisibility = () => {
   <div class="min-h-screen bg-dark-primary text-white">
     <Header />
 
-    <div class="min-h-screen pt-28 pb-20 flex items-center justify-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=800&fit=crop&q=80'); background-size: cover; background-position: center;">
+    <div class="h-screen pt-28 pb-20 flex items-center justify-center relative overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&h=800&fit=crop&q=80'); background-size: cover; background-position: center;">
       <!-- Background Overlay -->
       <div class="absolute inset-0 bg-black/60"></div>
       <!-- Gradient Overlay -->
       <div class="absolute inset-0 bg-gradient-glow opacity-20 pointer-events-none"></div>
 
-      <div class="max-w-md w-full px-4 relative z-10">
+      <div class="max-w-md w-full px-4 relative z-10 max-h-[calc(100vh-160px)] overflow-y-auto">
         <!-- Card -->
         <div class="card">
           <!-- Logo -->

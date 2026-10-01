@@ -48,7 +48,7 @@ npm run dev
 npm run build
 
 # Preview da build
-npm preview
+npm run preview
 ```
 
 ## 🎯 Recursos
@@ -146,7 +146,7 @@ Este projeto é de uso exclusivo para academias e negócios fitness.
 
 ## 💬 Contato
 
-Para dúvidas ou customizações, entre em contato com o desenvolvedor.
+Para dúvidas ou customizações, entre em contato com o desenvolvedor: Eduardo Rojas, [SitesVeloz](https://sitesveloz.com.br).
 
 ---
 
